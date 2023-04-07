@@ -20,17 +20,35 @@
         <div class="col-md-6">
 <hr>
 <!--------------- PIZZA SIZE ----------->
-        <p>Please select desired pizza size.</p>
         <form id="new-menu">
-        <div class="menu-group">
-            <select id="pizzaSize" class="menu" name="size">
-                <option value="0"> </option>  
-                <option value="10">Small $10</option>  
-                <option value="12">Medium $12</option>  
-                <option value="17">Large $17</option>   
-            </select>  
-        </div>
+    <div class="menu-group">
+        <p>Please select desired pizza size:</p>
+          <input type="radio" id="small" name="pizzaSize" value="small">
+          <label for="small">Small</label><br>
+          <input type="radio" id="medium" name="pizzaSize" value="medium">
+          <label for="medium">Medium</label><br>
+          <input type="radio" id="large" name="pizzaSize" value="large">
+          <label for="large">Large</label>
+    </div>
 <!--------------- TOPPINGS ----------->
+<div class="menu-group">
+    <p>Please select desired pizza toppings:</p>
+    <input type="radio" id="cheese" name="toppingOne" value="cheese">
+    <label for="cheese">Cheese</label><br>
+    <input type="radio" id="pepperoni" name="toppingTwo" value="pepperoni">
+    <label for="pepperoni">Pepperoni</label><br>
+    <input type="radio" id="pineapple" name="toppingThree" value="pineapple">
+    <label for="large">Pineapple</label><br>
+    <input type="radio" id="spinach" name="toppingFour" value="spinach">
+    <label for="large">Spinach</label>
+</div>
+
+
+
+
+
+
+
 <p></p>
 <p>Please select desired toppings.</p>
     <div class="menu-group">
