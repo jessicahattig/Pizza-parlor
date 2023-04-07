@@ -1,8 +1,8 @@
-# _Independent Project Week 3: Mr. Roboger's Neighborhood_
+# _Independent Project Week 4: Pizza Parlor_
 
 #### By _**Jessica Hattig**_
 
-#### _Epicodus, Week 3: Arrays and Looping_
+#### _Epicodus, Week 4: Object-Oriented JavaScript_
 
 ## Technologies Used
 
@@ -15,7 +15,7 @@
 
 ## Description
 
-_This portfolio exhibits my proficiency in JavaScript arrays and looping._
+_This portfolio exhibits my proficiency in object-oriented JavaScript._
 
 ## Setup/Installation Requirements
 
@@ -28,9 +28,14 @@ _This portfolio exhibits my proficiency in JavaScript arrays and looping._
 ## Tests
 Describe: Pizza()
 
-Test: "It should return a Pizza object with two properties for toppings and size"
+Test: "It should return a Pizza object with two properties for toppings and size."
 Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
 Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
+
+Describe: Cost()
+Test: "It should return the cost of the pizza depending which object properties are selected."
+code const pizzaCost = myPizza (["anchovies", "pineapple"], "medium");
+Expected output: Cost { toppings: ["$2", "$2"], size: "$10"}
 
 ## Known Bugs
 
