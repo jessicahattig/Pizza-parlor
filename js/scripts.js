@@ -34,24 +34,39 @@ Cost.prototype.totalCost = function() {
 };
 
 // User Interface Logic
-let pizzaOrder = new PizzaOrder();
-function displayCost(event) {
-    const pizzaOrder = pizzaOrder.findOrder(event.target.id);
-    document.getElementById('size').value; 
-    document.getElementById('toppingOne').value;
-    document.getElementById('toppingTwo').value;
-    document.getElementById('toppingThree').value;
-    document.getElementbyId('submit').setAttribute("id", pizzaOrder.id);
-    document.querySelector("div#pizza-total").removeAttribute("class");
-}
-function handleDelete(event) {
-    addressBook.deleteOrder(event.target.id);
-    document.querySelector("button.delete").removeAttribute("id");
-    document.querySelector("div#menu-group").setAttribute("class", "hidden");
-    listPizzatotal(pizzaOrder);
-}
+const priceSmall = 10.00;
+const priceMedium = 12.00;
+const priceLarge = 17.00;
+const priceToppings = 0.50; 
+let subtotal = 0;
+
+function handleFormSubmission(event) {
+    event.preventDefault();
+    const size = document.getElementById('size').value;
+    const toppingOne = document.getElementById('toppingOne').value;
+    const toppingTwo = ddocument.getElementById('toppingTwo').value;
+    const toppingThree = document.getElementById('toppingThree').value;
+    let order = new order(size,toppingOne, toppingTwo, toppingThree);
+    pizzaOrder.addOrder(new PizzaOrder)
+};
 
 window.addEventListener("submit", function()){
     document.querySelector("div#pizza-total").addEventListener("submit", displayCost);
     document.querySelector(id="btn").addEventListener("submit", handleDelete);
 };
+
+let addressBook = new AddressBook();
+
+function listContacts(addressBookToDisplay) {
+  let contactsDiv = document.querySelector("div#contacts");
+  contactsDiv.innerText =  null;
+  const ul = document.createElement("ul");
+  Object.keys(addressBookToDisplay.contacts).forEach(function(key) {
+    const contact = addressBookToDisplay.findContact(key);
+    const li = document.createElement("li");
+    li.append(contact.fullName());
+    li.setAttribute("id", contact.id);
+    ul.append(li);
+  });
+  contactsDiv.append(ul);
+}
