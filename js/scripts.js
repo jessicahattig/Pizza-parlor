@@ -31,15 +31,24 @@ Cost.prototype.totalCost = function() {
 // User Interface Logic
 function handleFormSubmission(event) {
     event.preventDefault();
-    const pizzaSize = document.getElementById('size').value;
-    const toppingOne = document.getElementById('toppingOne').value;
-    const toppingTwo = ddocument.getElementById('toppingTwo').value;
-    const toppingThree = document.getElementById('toppingThree').value;
+    const pizzaSize = document.getElementsByName('pizzaSize').value;
+    const toppingOne = document.getElementByName('toppingOne').value;
+    const toppingTwo = ddocument.getElementByName('toppingTwo').value;
+    const toppingThree = document.getElementByName('toppingThree').value;
     let order = new order(pizzaSize, toppingOne, toppingTwo, toppingThree);
     pizzaOrder.addOrder(new PizzaOrder)
 };
 
+function displayCost(event) {
+    
+}
+
+function submitOrder(event){
+
+}
+
+
 window.addEventListener("submit", function()){
-    document.querySelector("div#menu-group").addEventListener("submit", displayCost);
+    document.querySelector("div#addOrder").addEventListener("submit", function handleFormSubmission);
     document.querySelector(id="btn").addEventListener("submit", handleDelete);
 };
