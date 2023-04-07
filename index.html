@@ -12,8 +12,10 @@
 </head>
 <body>
     <div class="container">
-    <h1>Pizza Parlor</h1>
-        <p>Online ordering now available!</p>
+    <h1>
+        Pizza Parlor
+        <small class="text-muted">online ordering</small>
+     </h1>
         <div class="row">
         <div class="col-md-6">
 <hr>
@@ -21,7 +23,7 @@
         <p>Please select desired pizza size.</p>
         <form id="new-menu">
         <div class="menu-group">
-            <select id="size" class="menu" name="size">
+            <select id="pizzaSize" class="menu" name="size">
                 <option value="0"> </option>  
                 <option value="10">Small $10</option>  
                 <option value="12">Medium $12</option>  
@@ -40,16 +42,16 @@
             <option value="0.00"> </option>  
             <option value="2.00">Pepperoni $2.00</option>    
         </select>  
-    <select id="toppingThree" class="menu" name="toppingThree">  
-        <option value="0.00"> </option>  
-        <option value="3.00">Pineapple $3.00</option>    
-    </select> 
-    <select id="toppingFour" class="menu" name="toppingFour">  
-        <option value="0.00"> </option>  
-        <option value="4.00">Anchovies $4.00</option>    
-    </select>         
+        <select id="toppingThree" class="menu" name="toppingThree">  
+            <option value="0.00"> </option>  
+            <option value="3.00">Pineapple $3.00</option>    
+        </select> 
+        <select id="toppingFour" class="menu" name="toppingFour">  
+            <option value="0.00"> </option>  
+            <option value="4.00">Anchovies $4.00</option>    
+        </select>         
     </div>
-<button id="submit">Add order</button>
+<button type="button" class="btn btn-primary">Add Order</button>
 <hr>
 <!--------------- TOTAL  -------------->
     <h2>Total:</h2>
@@ -57,7 +59,7 @@
             <p> <span class="total"></span></p>
         </div>
     <hr>
-    <button id="btn" class="restart">Submit Order</button>  
+    <button type="button" class="btn btn-success">Submit Order</button>
     </div>
         </form>
 </body>
