@@ -20,13 +20,15 @@
             <form id="new-menu">
 <!--------------- PIZZA SIZE ----------->
                 <div class="menu-group">
-            <select id="size" class="menu" name="size">  
+            <select id="size" class="menu" name="size">
+                <option value="0"> </option>  
                 <option value="10">Small $10</option>  
                 <option value="12">Medium $12</option>  
                 <option value="17">Large $17</option>   
                 </select>  
-             </div>
+            </div>
 <!--------------- TOPPINGS ----------->
+<p> </p>
 <p>Please select desired toppings.</p>
 <div class="menu-group">
     <select id="topping1" class="menu" name="topping1">   
@@ -45,7 +47,15 @@
         <option value="4">Anchovies $4.00</option>    
     </select>         
      </div>
-    
+<hr>
+
+<h2>Total:</h2>
+          <div id="total">
+          </div>
+        </div>
+          <div id="pizza-total" class="hidden">
+            <p> <span class="total"></span></p>
+            <hr>
         </div>
     </div>
             </form>
