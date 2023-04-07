@@ -41,16 +41,28 @@ Pizza.prototype.deleteOrder = function(id) {
   };
 
 // User Interface Logic
-let order = new pizzaOrder
+let pizzaOrder = new PizzaOrder
 
+function listCost(pizzaOrderToDisplay) {
+    let pizzaOrderDiv = document.querySelector("div#pizza-total");
+    pizzaOrderDiv.value =  null;
+    const ul = document.createElement("ul");
+    Object.keys(pizzaOrderToDisplay.contacts).forEach(function(key) {
+      const order = pizzaOrderToDisplay.findContact(key);
+      const li = document.createElement("li");
+      li.append(order.Cost());
+      li.setAttribute("id", order.id);
+      ul.append(li);
+    });
+    
 function displayCost(event) {
     const order = pizzaOrder.findOrder(event.target.id);
     document.querySelector(".size").value = order.pizzaSize;
     document.querySelector(".topping1").value = order.toppingOne;
     document.querySelector(".topping2").value = order.toppingTwo;
     document.querySelector(".topping3").value = order.toppingThree;
-    document.querySelector("button.submit").setAttribute("id", contact.id);
-    document.querySelector("div#pizzaTotal").removeAttribute("class");
+    document.querySelector("button.submit").setAttribute("id", order.id);
+    document.querySelector("div#pizza-total").removeAttribute("class");
   }
 function handleorderSubmit(event){
   event.preventDefault();
@@ -66,3 +78,15 @@ function handleorderSubmit(event){
   document.querySelector("input#toppingtwo").value = null;
   document.querySelector("input#toppingthree").value = null;
 }
+function handleDelete(event) {
+    addressBook.deleteOrder(event.target.id);
+    document.querySelector("button.delete").removeAttribute("id");
+    document.querySelector("div#contact-details").setAttribute("class", "hidden");
+    listPizzatotal(pizzaOrder);
+  }
+
+  window.addEventListener("load", function (){
+    document.querySelector("form#new-order").addEventListener("submit", handleFormSubmission);
+    document.querySelector("div#cost").addEventListener("click", displayContactDetails);
+    document.querySelector("button.delete").addEventListener("click", handleDelete);
+  });
