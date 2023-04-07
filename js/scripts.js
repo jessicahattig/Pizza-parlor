@@ -27,7 +27,7 @@ function Cost (pizzaSize, toppingOne, toppingTwo, toppingThree) {
     this.toppingOne = toppingOne;
     this.toppingTwo = toppingTwo;
     this.toppingThree = toppingThree; 
-}
+};
 
 Cost.prototype.totalCost = function() {
     return sum([pizzaSize.value] + [toppingOne.value] + [oppingTwo.value] + [toppingThree.value]);
@@ -37,8 +37,11 @@ Cost.prototype.totalCost = function() {
 const priceSmall = 10.00;
 const priceMedium = 12.00;
 const priceLarge = 17.00;
-const priceToppings = 0.50; 
-let subtotal = 0;
+const priceToppingOne = 0.50; 
+const priceToppingTwo = 2.00;
+const priceToppingThree = 3.00;
+const priceToppingFour = 4.00;
+let total = 0;
 
 function handleFormSubmission(event) {
     event.preventDefault();
@@ -46,27 +49,15 @@ function handleFormSubmission(event) {
     const toppingOne = document.getElementById('toppingOne').value;
     const toppingTwo = ddocument.getElementById('toppingTwo').value;
     const toppingThree = document.getElementById('toppingThree').value;
-    let order = new order(size,toppingOne, toppingTwo, toppingThree);
+    let order = new order(size, toppingOne, toppingTwo, toppingThree);
     pizzaOrder.addOrder(new PizzaOrder)
 };
 
+function addOrder
+    
+
+
 window.addEventListener("submit", function()){
-    document.querySelector("div#pizza-total").addEventListener("submit", displayCost);
+    document.querySelector("div#menu-group").addEventListener("submit", displayCost);
     document.querySelector(id="btn").addEventListener("submit", handleDelete);
 };
-
-let addressBook = new AddressBook();
-
-function listContacts(addressBookToDisplay) {
-  let contactsDiv = document.querySelector("div#contacts");
-  contactsDiv.innerText =  null;
-  const ul = document.createElement("ul");
-  Object.keys(addressBookToDisplay.contacts).forEach(function(key) {
-    const contact = addressBookToDisplay.findContact(key);
-    const li = document.createElement("li");
-    li.append(contact.fullName());
-    li.setAttribute("id", contact.id);
-    ul.append(li);
-  });
-  contactsDiv.append(ul);
-}
