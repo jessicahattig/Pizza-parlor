@@ -34,23 +34,13 @@ Cost.prototype.totalCost = function() {
 };
 
 // User Interface Logic
-const Totalcost = () => {
-    const options = document.getElementById("menu").options;
-    let sum = 0;
-    for (let i = 0; i < options.length; i++) {
-      if (options[i].selected) {
-        sum += parseInt(options[i].value, 10);
-      }
-    }
-  }
-//////////////////
 let pizzaOrder = new PizzaOrder();
 function displayCost(event) {
     const pizzaOrder = pizzaOrder.findOrder(event.target.id);
-    document.querySelector(".size").value = pizzaOrder.pizzaSize;
-    document.querySelector(".topping1").value = pizzaOrder.toppingOne;
-    document.querySelector(".topping2").value = pizzaOrder.toppingTwo;
-    document.querySelector(".topping3").value = pizzaOrder.toppingThree;
+    document.getElementById('size').value; 
+    document.getElementById('toppingOne').value;
+    document.getElementById('toppingTwo').value;
+    document.getElementById('toppingThree').value;
     document.querySelector("button.submit").setAttribute("id", pizzaOrder.id);
     document.querySelector("div#pizza-total").removeAttribute("class");
 }
@@ -61,7 +51,8 @@ function handleDelete(event) {
     listPizzatotal(pizzaOrder);
 }
 
-window.addEventListener("load", function()){
+window.addEventListener("submit", function()){
     document.querySelector("div#pizza-total").addEventListener("submit", displayCost);
-    document.querySelector("button.delete").addEventListener("click", handleDelete);
+    document.querySelector(id="btn").addEventListener("submit", handleDelete);
 };
+    
