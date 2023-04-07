@@ -41,7 +41,7 @@ function displayCost(event) {
     document.getElementById('toppingOne').value;
     document.getElementById('toppingTwo').value;
     document.getElementById('toppingThree').value;
-    document.querySelector("button.submit").setAttribute("id", pizzaOrder.id);
+    document.getElementbyId('submit').setAttribute("id", pizzaOrder.id);
     document.querySelector("div#pizza-total").removeAttribute("class");
 }
 function handleDelete(event) {
@@ -55,4 +55,3 @@ window.addEventListener("submit", function()){
     document.querySelector("div#pizza-total").addEventListener("submit", displayCost);
     document.querySelector(id="btn").addEventListener("submit", handleDelete);
 };
-    
