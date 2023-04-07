@@ -11,7 +11,7 @@ PizzaOrder.prototype.addOrder = function(order) {
 
 PizzaOrder.prototype.assignId = function() {
     this.currentId += 1;
-    return this.currentId;
+    return this.currentOrder;
 };
 
 PizzaOrder.prototype.findOrder = function(id) {
@@ -19,13 +19,6 @@ PizzaOrder.prototype.findOrder = function(id) {
 return this.pizzaTotal[id];
     }
     return false;
-};
-PizzaOrder.prototype.deleteOrder = function(id) {
-    if (this.pizzaTotal[id] === undefined) {
-        return false;
-    }
-delete this.pizzaTotal[id];
-return true;
 };
 
 // Business Logic for Cost ---------
@@ -37,7 +30,7 @@ function Cost (pizzaSize, toppingOne, toppingTwo, toppingThree) {
 }
 
 Cost.prototype.totalCost = function() {
-    return sum(this.pizzaSize.value + this.toppingOne + this.toppingTwo + this.toppingThree);
+    return sum([pizzaSize.value] + [toppingOne.value] + [oppingTwo.value] + [toppingThree.value]);
 };
 
 // User Interface Logic
@@ -60,30 +53,15 @@ function displayCost(event) {
     document.querySelector(".topping3").value = pizzaOrder.toppingThree;
     document.querySelector("button.submit").setAttribute("id", pizzaOrder.id);
     document.querySelector("div#pizza-total").removeAttribute("class");
-  }
-function handleorderSubmit(event){
-    event.preventDefault();
-    const inputtedPizzaSize = document.querySelector("input#size").value;
-    const inputtedToppingOne = document.querySelector("input#toppingone").value;
-    const inputtedToppingTwo = document.querySelector("input#toppingtwo").value;
-    const inputtedToppingThree = document.querySelector("input#toppingthree").value;
-    let newOrder = new Order(inputtedPizzaSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree);
-    pizzaOrder.addOrder(newOrder);
-    listCost(pizzaOrder);
-    document.querySelector("input#size").value = null;
-    document.querySelector("input#toppingone").value = null;
-    document.querySelector("input#toppingtwo").value = null;
-    document.querySelector("input#toppingthree").value = null;
 }
 function handleDelete(event) {
     addressBook.deleteOrder(event.target.id);
     document.querySelector("button.delete").removeAttribute("id");
-    document.querySelector("div#contact-details").setAttribute("class", "hidden");
+    document.querySelector("div#menu-group").setAttribute("class", "hidden");
     listPizzatotal(pizzaOrder);
 }
 
-window.addEventListener("load", function ()) {
-    document.querySelector("form#new-order").addEventListener("submit", handleFormSubmission);
-    document.querySelector("div#cost").addEventListener("click", displayContactDetails);
+window.addEventListener("load", function()){
+    document.querySelector("div#pizza-total").addEventListener("submit", displayCost);
     document.querySelector("button.delete").addEventListener("click", handleDelete);
-}
+};
