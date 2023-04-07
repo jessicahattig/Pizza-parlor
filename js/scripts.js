@@ -52,5 +52,17 @@ function displayCost(event) {
     document.querySelector("button.submit").setAttribute("id", contact.id);
     document.querySelector("div#pizzaTotal").removeAttribute("class");
   }
-
+function handleorderSubmit(event){
   event.preventDefault();
+  const inputtedPizzaSize = document.querySelector("input#size").value;
+  const inputtedToppingOne = document.querySelector("input#toppingone").value;
+  const inputtedToppingTwo = document.querySelector("input#toppingtwo").value;
+  const inputtedToppingThree = document.querySelector("input#toppingthree").value;
+  let newOrder = new Order(inputtedPizzaSize, inputtedToppingOne, inputtedToppingTwo, inputtedToppingThree);
+  pizzaOrder.addOrder(newOrder);
+  listCost(pizzaOrder);
+  document.querySelector("input#size").value = null;
+  document.querySelector("input#toppingone").value = null;
+  document.querySelector("input#toppingtwo").value = null;
+  document.querySelector("input#toppingthree").value = null;
+}
