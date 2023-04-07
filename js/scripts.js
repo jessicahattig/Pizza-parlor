@@ -6,7 +6,7 @@ this.currentOrder = 0;
 
 PizzaOrder.prototype.addOrder = function(order) {
     order.id = this.assignId();
-    this.pizzaTotal[order.value] = order;
+    this.pizzaTotal[order.id] = order;
   };
 
 PizzaOrder.prototype.assignId = function() {
@@ -15,10 +15,17 @@ PizzaOrder.prototype.assignId = function() {
 };
 
 Pizza.prototype.findOrder = function(id) {
-    if (this.pizzaTotal[value] !== undefined) {
-      return this.pizzaTotal[value];
+    if (this.pizzaTotal[id] !== undefined) {
+      return this.pizzaTotal[id];
     }
     return false;
+  };
+Pizza.prototype.deleteOrder = function(id) {
+    if (this.pizzaTotal[id] === undefined) {
+        return false;
+    }
+     delete this.pizzaTotal[id];
+     return true;
   };
 
 // Business Logic for Cost ---------
@@ -30,19 +37,20 @@ Pizza.prototype.findOrder = function(id) {
   }
 
   Cost.prototype.totalCost = function() {
-    return sum(this.pizzaSize.value + this.toppingOne + this.toppingTwo + this.toppingThree);
+    return sum(this.pizzaSize + this.toppingOne + this.toppingTwo + this.toppingThree);
   };
 
 // User Interface Logic
+let order = new pizzaOrder
+
 function displayCost(event) {
-    const order = addressBook.findOrder(event.target.value);
-    document.querySelector(".first-name").innerText = contact.firstName;
-    document.querySelector(".last-name").innerText = contact.lastName;
-    document.querySelector(".phone-number").innerText = contact.phoneNumber;
-    document.querySelector(".physical-address").innerText = contact.physicalAddress;
-    document.querySelector(".personal-email").innerText = contact.emailAddress[0];
-    document.querySelector(".work-email").innerText = contact.emailAddress[1];
-    document.querySelector("button.delete").setAttribute("id", contact.id);
-    document.querySelector("div#contact-details").removeAttribute("class");
+    const order = pizzaOrder.findOrder(event.target.id);
+    document.querySelector(".size").value = order.pizzaSize;
+    document.querySelector(".topping1").value = order.toppingOne;
+    document.querySelector(".topping2").value = order.toppingTwo;
+    document.querySelector(".topping3").value = order.toppingThree;
+    document.querySelector("button.submit").setAttribute("id", contact.id);
+    document.querySelector("div#pizzaTotal").removeAttribute("class");
   }
-  
+
+  event.preventDefault();
