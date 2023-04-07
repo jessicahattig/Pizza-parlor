@@ -12,32 +12,33 @@
 </head>
 <body>
     <div class="container">
-      <h1>Pizza Parlor</h1>
-      <div class="row">
+    <h1>Pizza Parlor</h1>
+        <p>Online ordering now available!</p>
+        <div class="row">
         <div class="col-md-6">
-          <hr>
-          <p>Please select pizza size.</p>
-            <form id="new-menu">
+<hr>
 <!--------------- PIZZA SIZE ----------->
-                <div class="menu-group">
+        <p>Please select desired pizza size.</p>
+        <form id="new-menu">
+        <div class="menu-group">
             <select id="size" class="menu" name="size">
                 <option value="0"> </option>  
                 <option value="10">Small $10</option>  
                 <option value="12">Medium $12</option>  
                 <option value="17">Large $17</option>   
-                </select>  
-            </div>
+            </select>  
+        </div>
 <!--------------- TOPPINGS ----------->
-<p> </p>
+<p></p>
 <p>Please select desired toppings.</p>
-<div class="menu-group">
-    <select id="topping1" class="menu" name="toppings">   
-        <option value="0"> </option> 
-        <option value="0">Cheese $0</option>    
+    <div class="menu-group">
+        <select id="topping1" class="menu" name="toppings">   
+            <option value="0"> </option> 
+            <option value="0">Cheese $0</option>    
         </select> 
-    <select id="topping2" class="menu" name="topping2">  
-        <option value="0"> </option>  
-        <option value="2">Pepperoni $2.00</option>    
+        <select id="topping2" class="menu" name="topping2">  
+            <option value="0"> </option>  
+            <option value="2">Pepperoni $2.00</option>    
         </select>  
     <select id="topping3" class="menu" name="topping3">  
         <option value="0"> </option>  
@@ -47,19 +48,17 @@
         <option value="0"> </option>  
         <option value="4">Anchovies $4.00</option>    
     </select>         
-     </div>
-<button type="submit" class="btn-primary">Add to order</button>
+    </div>
+<button id="submit"  onclick="Totalcost()">Add order</button>
 <hr>
 <!--------------- TOTAL  -------------->
-<h2>Total:</h2>
+    <h2>Total:</h2>
         <div id="pizza-total" class="hidden">
             <p> <span class="total"></span></p>
-<hr>
-</div>
-<button id="btn" class="btn-secondary">Submit Order</button>  
-        
-</div>
-</div>
-</form>
+        </div>
+    <hr>
+    <button id="btn" class="btn-secondary">Submit Order</button>  
+    </div>
+        </form>
 </body>
 </html>
