@@ -5,8 +5,8 @@ this.currentOrder = 0;
 }
 
 PizzaOrder.prototype.addOrder = function(order) {
-    contact.id = this.assignId();
-    this.pizzaTotal[contact.id] = order;
+    order.id = this.assignId();
+    this.pizzaTotal[order.value] = order;
   };
 
 PizzaOrder.prototype.assignId = function() {
@@ -15,8 +15,8 @@ PizzaOrder.prototype.assignId = function() {
 };
 
 Pizza.prototype.findOrder = function(id) {
-    if (this.pizzaTotal[id] !== undefined) {
-      return this.pizzaTotal[id];
+    if (this.pizzaTotal[value] !== undefined) {
+      return this.pizzaTotal[value];
     }
     return false;
   };
@@ -35,7 +35,7 @@ Pizza.prototype.findOrder = function(id) {
 
 // User Interface Logic
 function displayCost(event) {
-    const contact = addressBook.findContact(event.target.id);
+    const order = addressBook.findOrder(event.target.value);
     document.querySelector(".first-name").innerText = contact.firstName;
     document.querySelector(".last-name").innerText = contact.lastName;
     document.querySelector(".phone-number").innerText = contact.phoneNumber;
