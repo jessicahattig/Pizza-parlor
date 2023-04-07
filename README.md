@@ -33,6 +33,7 @@ Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
 Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
 
 Describe: Cost()
+
 Test: "It should return the cost of the pizza depending which object properties are selected."
 code const pizzaCost = myPizza (["anchovies", "pineapple"], "medium");
 Expected output: Cost { toppings: ["$2", "$2"], size: "$10"}
