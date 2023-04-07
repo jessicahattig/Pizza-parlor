@@ -1,17 +1,22 @@
 //Buisness Logic for Pizza -------------
-function Pizza() {
-this.pizzaTotal={};
-this.currentId = 0;
+function PizzaOrder() {
+this.pizzaTotal = {};
+this.currentOrder = 0;
 }
 
-AddressBook.prototype.addContact = function(Cost) {
+PizzaOrder.prototype.addOrder = function(order) {
     contact.id = this.assignId();
-    this.contacts[contact.id] = contact;
+    this.pizzaTotal[contact.id] = order;
   };
 
-AddressBook.prototype.findContact = function(id) {
-    if (this.contacts[id] !== undefined) {
-      return this.contacts[id];
+PizzaOrder.prototype.assignId = function() {
+    this.currentOrder += 1;
+    return this.currentOrder;
+};
+
+Pizza.prototype.findOrder = function(id) {
+    if (this.pizzaTotal[id] !== undefined) {
+      return this.pizzaTotal[id];
     }
     return false;
   };
