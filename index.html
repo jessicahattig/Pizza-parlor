@@ -20,19 +20,19 @@
         <div class="col-md-6">
 <hr>
 <!--------------- PIZZA SIZE ----------->
-    <form id="new-menu">
-    <div class="menu-group">
+<div id="pizzaOrder">
+    <div class="pizzaSize">
         <p>Please select desired pizza size:</p>
           <input type="radio" id="small" name="pizzaSize" value="10.00">
           <label for="small">Small ($10.00)</label><br>
           <input type="radio" id="medium" name="pizzaSize" value="12.00">
           <label for="medium">Medium ($12.00)</label><br>
-          <input type="radio" id="large" name="pizzaSize" value="large">
+          <input type="radio" id="large" name="pizzaSize" value="15.00">
           <label for="large">Large ($15.00)</label>
     </div>
     <br>
 <!--------------- TOPPINGS ----------->
-    <div class="menu-group">
+    <div class="pizzaToppings">
         <p>Please select desired pizza toppings:</p>
             <input type="radio" id="cheese" name="toppingOne" value="0.00">
             <label for="cheese">Cheese (no additional cost)</label><br>
@@ -42,14 +42,15 @@
             <label for="pineapple">Pineapple ($3.00)</label><br>
             <input type="radio" id="spinach" name="toppingFour" value="4.00">
             <label for="spinach">Spinach ($4.00)</label>
-</div>
-<div id="addOrder">
+    </div>
+
 <button type="button" class="btn btn-primary">Add Order</button>
 </div>
+
 <hr>
 <!--------------- TOTAL  -------------->
     <h2>Total:</h2>
-        <div id="pizza-total" class="hidden">
+        <div id="pizzaTotal" class="hidden">
             <p> <span class="total"></span></p>
         </div>
     <hr>

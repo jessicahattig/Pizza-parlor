@@ -2,7 +2,7 @@
 function PizzaOrder() {
 this.pizzaTotal = {};
 this.currentOrder = 0;
-}
+};
 
 PizzaOrder.prototype.addOrder = function(order) {
     order.id = this.assignId();
@@ -17,39 +17,47 @@ return this.pizzaTotal[id];
 };
 
 // Business Logic for Cost ---------
-function Cost (pizzaSize, toppingOne, toppingTwo, toppingThree) {
+function addOrder (pizzaSize, pizzaToppings) {
     this.pizzaSize = pizzaSize;
-    this.toppingOne = toppingOne;
-    this.toppingTwo = toppingTwo;
-    this.toppingThree = toppingThree; 
-};
+    this.pizzaToppings = pizzaToppings;
 
-Cost.prototype.totalCost = function() {
-    return sum([pizzaSize.value] + [toppingOne.value] + [oppingTwo.value] + [toppingThree.value])
-};
+addOrder.prototype.totalCost = function() {
+    return this.pizzaSize + " " + pizzaToppings
+}};
 
 // User Interface Logic
-function handleFormSubmission(event) {
-    event.preventDefault();
-    const smallPizza = document.getElementsById('small').value;
-    const mediumPizza = document.getElementsById('medium').value;
-    const largePizza = document.getElementsById('large').value;
-    const cheeseTopping = document.getElementsById('cheese').value;
-    const pepperoniTopping = document.getElementsById('pepperoni').value;
-    const pineappleTopping= document.getElementsById('pineapple').value;
-    const spinachTopping = document.getElementsById('spinach').value;
-    let order = new order(smallPizza, mediumPizza, largePizza, cheeseTopping, pepperoniTopping pineappleTopping, spinachTopping) 
-};
-function addOrder(event) {
-    
+const small = 10.00;
+const medium = 12.00;
+const large = 15.00;
+const cheese = 0.00; 
+const pepperoni = 2.00;
+const pineapple = 3.00;
+const spinach = 4.00;
+let total = 0;
+
+function calculateSize(element) {
+    if (element == null) {
+        return;
 }
-
-function submitOrder(event){
-
+    switch(element.value) {
+        case "10":
+            subtotal = small;
+            break;
+        case "12":
+            subtotal = medium;
+            break;
+        case "15":
+            subtotal = large;
+            break;
 }
+addOrder();
 
-window.addEventListener("submit", function()){
-    document.querySelector("div#addOrder").addEventListener("submit", function handleFormSubmission);
-    document.querySelector("div#addOrder").addEventListener("submit", function handleFormSubmission);
-    document.querySelector(id="btn").addEventListener("submit", handleDelete);
-};
+
+
+
+const pizzaSize = document.querySelector(".pizzaSize")
+const pizzaToppings = document.querySelector(".pizzaToppings")
+const addOrder = document.querySelector(".addOrder")
+
+document.addEventListener("submit", e => {
+    console.log(addOrder)})
