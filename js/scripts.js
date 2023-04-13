@@ -59,5 +59,15 @@ const pizzaSize = document.querySelector(".pizzaSize")
 const pizzaToppings = document.querySelector(".pizzaToppings")
 const addOrder = document.querySelector(".addOrder")
 
-document.addEventListener("submit", e => {
-    console.log(addOrder)})
+
+window.addEventListener("load", function() {
+    console.log("here")
+    document.querySelector("form").addEventListener("submit", PizzaOrder)
+});
+
+function handleFormSubmission(event){
+    event.preventDefault()
+    const usersInput = document.getElementsByClassName("pizzaOrder").value
+    const outPut = array(usersInput)
+    document.getElementById("pizzaTotal").innerText = outPut
+};

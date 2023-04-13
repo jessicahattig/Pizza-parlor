@@ -15,7 +15,7 @@
 
 ## Description
 
-_This portfolio exhibits my proficiency in object-oriented JavaScript._
+_NEED TO EDIT._
 
 ## Setup/Installation Requirements
 
@@ -35,8 +35,8 @@ Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
 Describe: Cost()
 
 Test: "It should return the cost of the pizza depending which object properties are selected."
-code const pizzaCost = myPizza (["anchovies", "pineapple"], "medium");
-Expected output: Cost { toppings: ["$2", "$2"], size: "$10"}
+code const pizzaCost = myPizza (["pepperoni", "pineapple"], "medium");
+Expected output: Cost { toppings: ["$2", "$3"], size: "$10"}
 
 ## Known Bugs
 
