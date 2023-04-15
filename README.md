@@ -34,11 +34,10 @@ Expected Output: Pizza { toppings: ["cheese", "pineapple"], size: "medium" }
 
 Describe: PizzaOrder.prototype.addCost()
 
-Test: "It should add $100 to order if user does not select a pizza size."
+Test: "It should add cost of one topping to order."
 Code: 
-  let Pizza = new PizzaOrder ("",[]);
-  Pizza.addCost();
-Expected Output: Pizza = '100';
+  PizzaOrder.prototype.addCost([])
+Expected Output: 
  
 
 ## Known Bugs
