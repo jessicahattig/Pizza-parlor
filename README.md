@@ -28,9 +28,10 @@ _NEED TO EDIT._
 ## Tests
 Describe: Pizza()
 
-Test: "It should return a Pizza object with two properties for toppings and size."
-Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
-Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium" }
+Test: "It should create a pizza object."
+Code: let Pizza = new PizzaOrder(["cheese", "pineapple"], "medium");
+Expected Output: Pizza { toppings: ["cheese", "pineapple"], size: "medium" }
+
 
 Describe: Cost()
 
