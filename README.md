@@ -32,12 +32,12 @@ Test: "It should create a pizza object."
 Code: let Pizza = new PizzaOrder(["cheese", "pineapple"], "medium");
 Expected Output: Pizza { toppings: ["cheese", "pineapple"], size: "medium" }
 
-Describe: PizzaOrder.prototype.totalCost()
+Describe: PizzaOrder.prototype.addCost()
 
 Test: "It should add $100 to order if user does not select a pizza size."
 Code: 
   let Pizza = new PizzaOrder ("",[]);
-  Pizza.totalCost();
+  Pizza.addCost();
 Expected Output: Pizza = '100';
  
 
