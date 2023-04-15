@@ -36,8 +36,8 @@ Describe: PizzaOrder.prototype.addCost()
 
 Test: "It should add cost of one topping to order."
 Code: 
-  PizzaOrder.prototype.addCost([])
-Expected Output: 
+  PizzaOrder.prototype.addCost(toppings: ["pineapple"])
+Expected Output: 3
  
 
 ## Known Bugs
