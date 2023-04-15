@@ -26,18 +26,20 @@ _NEED TO EDIT._
 [GitHub-Pages](NEED NEW LINK)
 
 ## Tests
-Describe: Pizza()
+Describe: PizzaOrder()
 
 Test: "It should create a pizza object."
 Code: let Pizza = new PizzaOrder(["cheese", "pineapple"], "medium");
 Expected Output: Pizza { toppings: ["cheese", "pineapple"], size: "medium" }
 
+Describe: PizzaOrder.prototype.totalCost()
 
-Describe: Cost()
-
-Test: "It should return the cost of the pizza depending which object properties are selected."
-code const pizzaCost = myPizza (["pepperoni", "pineapple"], "medium");
-Expected output: Cost { toppings: ["$2", "$3"], size: "$10"}
+Test: "It should add $100 to order if user does not select a pizza size."
+Code: 
+  let Pizza = new PizzaOrder ("",[]);
+  Pizza.totalCost();
+Expected Output: Pizza = '100';
+ 
 
 ## Known Bugs
 

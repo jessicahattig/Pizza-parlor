@@ -1,4 +1,6 @@
 //Buisness Logic for Pizza -------------
+let Pizza = new PizzaOrder()
+
 function PizzaOrder(toppings, size) {
 this.toppings = toppings;
 this.size = size;
@@ -17,14 +19,22 @@ return this.pizzaTotal[id];
     return false;
 };
 
-// Business Logic for Cost ---------
-function addOrder (pizzaSize, pizzaToppings) {
-    this.pizzaSize = pizzaSize;
-    this.pizzaToppings = pizzaToppings;
 
-addOrder.prototype.totalCost = function() {
-    return this.pizzaSize + " " + pizzaToppings
-}};
+
+// Business Logic for Cost ---------
+
+
+
+
+
+
+// function addOrder (pizzaSize, pizzaToppings) {
+//     this.pizzaSize = pizzaSize;
+//     this.pizzaToppings = pizzaToppings;
+
+// addOrder.prototype.totalCost = function() {
+//     return this.pizzaSize + " " + pizzaToppings
+// }};
 
 // User Interface Logic
 // function calculateSize(element) {
@@ -61,7 +71,7 @@ function handleFormSubmission(event){
     event.preventDefault()
     const pizzaSize = document.querySelector('input[name="pizzaSize"]:checked').value
     const toppings = document.querySelector('input[name="toppings"]:checked').value
-    console.log(toppings)
+console.log(toppings)
     console.log(pizzaSize)
     // const outPut = array(sizeValue)
 //   let order = new PizzaOrder() -- can run protypes on, going through and adding values of size of toppings  -- parseInt to change user inputs from strings to / 
