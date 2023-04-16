@@ -2,9 +2,9 @@
 let Pizza = new PizzaOrder()
 
 function PizzaOrder(toppings, size) {
-this.toppings = toppings;
-this.size = size;
-this.currentOrder = 0;
+    this.toppings = toppings;
+    this.size = size;
+    this.currentOrder = 0;
 }
 
 PizzaOrder.prototype.addOrder = function(order) {
@@ -24,6 +24,18 @@ return this.pizzaTotal[id];
 // let order = new PizzaOrder() -- can run protypes on, going through and adding values of size of toppings  -- parseInt to change user inputs from strings to / 
 // // 
 
+function TotalCost(toppings, pizzaSize) {
+    console.log(toppings, pizzaSize)
+    if (pizzaSize) {
+        total = parseInt(toppings) + parseInt(pizzaSize)
+    }
+    else {
+        total = parseInt(toppings) + 100
+    }
+        total = parseInt(toppings) + parseInt(pizzaSize)
+    console.log(total)
+return total
+}
 
 
 
@@ -39,9 +51,7 @@ function handleFormSubmission(event){
     const toppings = document.querySelector('input[name="toppings"]:checked').value
     console.log(toppings)
     console.log(pizzaSize)
-    // const outPut = array(sizeValue)
     
-      
-
+    const outPut = TotalCost(toppings, pizzaSize)
     document.getElementById("pizzaTotal").innerText = outPut
 };
