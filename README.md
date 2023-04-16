@@ -32,13 +32,23 @@ Test: "It should create a pizza object."
 Code: let Pizza = new PizzaOrder(["cheese", "pineapple"], "medium");
 Expected Output: Pizza { toppings: ["cheese", "pineapple"], size: "medium" }
 
-Describe: PizzaOrder.prototype.addCost()
-
-Test: "It should add cost of one topping to order."
-Code: 
-  PizzaOrder.prototype.addCost(toppings: ["pineapple"])
-Expected Output: 3
+Describe: PizzaOrder.prototype.addToppings()
  
+Test: "It should add cost of a list of toppings to order."
+Code: 
+  PizzaOrder.prototype.addToppings(toppings list)
+Expected Output: sum of the cost of the toppings.
+
+Describe: TotalCost()
+
+Test: "It should add the cost of the toppings and size."
+Code:  PizzaOrder.prototype.totalCost(toppings cost, size cost)
+Expected Output: Sum of topping cost and size. If size is not selected, add $100 to total cost.
+
+Describe: nameCheck()
+Test: "It should check the length of name."
+Code:  PizzaOrder.prototype.nameCheck(inputted name)
+Expected Output: If their submitted name is less than 4 letters long, equal "invalid name". 
 
 ## Known Bugs
 
