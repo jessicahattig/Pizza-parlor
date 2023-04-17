@@ -21,18 +21,26 @@ return this.pizzaTotal[id];
 
 // Business Logic for Cost ---------
 
-// let order = new PizzaOrder() -- can run protypes on, going through and adding values of size of toppings  -- parseInt to change user inputs from strings to / 
+// Note: let order = new PizzaOrder() -- can run protypes on, going through and adding values of size of toppings  -- parseInt to change user inputs from strings to get value.
 // // 
 
 function TotalCost(toppings, pizzaSize) {
-    console.log(toppings, pizzaSize)
     if (pizzaSize) {
-        total = parseInt(toppings) + parseInt(pizzaSize)
+        total = pizzaSize
     }
     else {
-        total = parseInt(toppings) + 100
+        console.log("HELLO")
+        total = 100
     }
-        total = parseInt(toppings) + parseInt(pizzaSize)
+
+
+    let toppingsArray = [];
+    for (let i = 0; i < toppings.length; i++){
+        if(toppings[i].checked){
+        toppingsArray.push(toppings[i].id);
+        }
+    }
+    total = parseInt(toppings) + parseInt(pizzaSize)
     console.log(total)
 return total
 }
@@ -48,7 +56,8 @@ window.addEventListener("load", function() {
 function handleFormSubmission(event){
     event.preventDefault()
     const pizzaSize = document.querySelector('input[name="pizzaSize"]:checked').value
-    const toppings = document.querySelector('input[name="toppings"]:checked').value
+    const size = pizzaSize ? parseInt(pizzaSize.value) : null;
+    const toppings = document.querySelectorAll('input[name="toppings"]:checked')
     console.log(toppings)
     console.log(pizzaSize)
     
